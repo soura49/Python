@@ -2,7 +2,7 @@ import csv
 from tempfile import NamedTemporaryFile
 import shutil
 import datetime
-
+import os
 
 
 def updated_email():
@@ -25,7 +25,9 @@ def update_new_user():
                 line[3] = updated_email()
                 print(line[3])
             csv_writer.writerow(line)
-
+    if not os.path.exists(filename):
+        os.remove(filename)
+        
     shutil.move(tempfile.name,filename)
 
 
