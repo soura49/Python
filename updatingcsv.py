@@ -20,3 +20,5 @@ def update_new_user():
             csv_writer.writerow(line)
 
     shutil.move(tempfile.name,filename)
+
+    
